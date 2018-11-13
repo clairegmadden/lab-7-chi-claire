@@ -36,11 +36,19 @@ claire: data wrangling and counts
 
 get_guns <- gc_df %>% 
   filter(gender != "NA", make_get_guns != "NA") %>% 
-  count(gender, make_get_guns)
+  count(gender, make_get_guns) %>% 
+  spread(make_get_guns, n) %>% 
+  select(-gender)
+
+
+rownames(get_guns) <- c("Female", "Male") # reassign row names from 1, 2 to be more informative Female and Male
+  
 
 ```
 
+spread function uses a key value pair - give column you want to spread out into multiple columns and tell it what values are associated with each output
 
+when we run chi-square, we want data frame that only contains counts 
 
 
 
