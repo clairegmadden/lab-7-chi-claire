@@ -1,0 +1,20 @@
+---
+title: "Gun Control Chi Square"
+author: "Claire Madden"
+date: "11/13/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I'm claire and I'm updating this markdown file here.
+
+```{r}
+
+```
+
+
+
+
