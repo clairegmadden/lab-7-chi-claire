@@ -51,4 +51,26 @@ spread function uses a key value pair - give column you want to spread out into 
 when we run chi-square, we want data frame that only contains counts 
 
 
+My name is Lydia the g and I'm going to be doing chi-square test for independence my gal! 
 
+
+We ask: "Is there a significant association between sex and opinion on whether guns should be more difficult, easier, or teh same difficulty to get?"
+
+```{r}
+
+# Let's look at the actual proportions:
+
+guns_prop <- prop.table(as.matrix(get_guns), 1)
+guns_prop 
+
+#,1 = proportion calculated by row 
+
+# Run chi-square test for independence (sig association between sex of respondents and relationship with guns?)
+
+guns_x2 <- chisq.test(get_guns)
+guns_x2
+
+```
+
+
+"Recommendd government action on gun access differed significantly between male (n = ) and female (n = ) respondents ($\chi^2$(`r guns_x2$parameter`) = ....., p < 0.001). Notably, a much higher proportion of female respondents (57.4%) recommend making it more difficult to get guns, compared to 40.4% for male respondents."
